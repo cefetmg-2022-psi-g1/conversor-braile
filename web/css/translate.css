@@ -1,0 +1,25 @@
+.translate {
+    display: grid;
+    margin-left: 16vw;
+    padding-top: 10vh;
+    grid-template-columns: 34vw 5vw 34vw;
+}
+
+
+textarea {
+    width: 30vw;
+    height: 70vh;
+    border: 0.5vw solid #C1D0D8;
+    border-radius: 6px;
+    resize: none;
+    box-shadow: inset 0 0 0.4vh black;
+}
+
+button {
+    margin-left: 10vw;
+}
+
+#arrow {
+    width: 3vw;
+    height: 70vh;
+}
