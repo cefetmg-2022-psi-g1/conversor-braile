@@ -1,25 +1,53 @@
-.translate {
-    display: grid;
-    margin-left: 16vw;
-    padding-top: 10vh;
-    grid-template-columns: 34vw 5vw 34vw;
+@media only screen and (min-width : 420px) {
+    .translate {
+        display: grid;
+        margin-left: 16vw;
+        padding-top: 10vh;
+        grid-template-columns: 34vw 5vw 34vw;
+    }
+
+    textarea {
+        width: 30vw;
+        height: 70vh;
+
+    }
+
+    #arrow {
+        width: 3vw;
+        height: 70vh;
+    }
+
+    body{
+        background-image: url("image/Braille.svg");
+    }
 }
 
+@media only screen and (max-width : 420px) {
+    .translate {
+        display: grid;
+        margin-left: 16vw;
+        padding-top: 10vh;
+        grid-template-rows: 35vh 8vh 30vh;
+        width: 66vw;    
+    }
+
+    textarea {
+        width: 66vw;
+        height: 30vh;
+    }
+
+    #arrow {
+        transform: rotate(90deg);
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+}
 
 textarea {
-    width: 30vw;
-    height: 70vh;
     border: 0.5vw solid #C1D0D8;
     border-radius: 6px;
     resize: none;
     box-shadow: inset 0 0 0.4vh black;
-}
-
-button {
-    margin-left: 10vw;
-}
-
-#arrow {
-    width: 3vw;
-    height: 70vh;
 }
