@@ -2,7 +2,7 @@
     .translate {
         margin-left: calc(50vw - 35.5vw);
         display: grid;
-        padding-top: 2vh;
+        padding-top: 4vh;
         grid-template-columns: 34vw 5vw 34vw;
     }
 
