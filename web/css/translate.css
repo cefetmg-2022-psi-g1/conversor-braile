@@ -1,8 +1,8 @@
 @media only screen and (min-width : 420px) {
     .translate {
+        margin-left: calc(50vw - 35.5vw);
         display: grid;
-        margin-left: 16vw;
-        padding-top: 10vh;
+        padding-top: 2vh;
         grid-template-columns: 34vw 5vw 34vw;
     }
 
@@ -26,7 +26,7 @@
     .translate {
         display: grid;
         margin-left: 16vw;
-        padding-top: 10vh;
+        padding-top: 5vh;
         grid-template-rows: 35vh 8vh 30vh;
         width: 66vw;    
     }

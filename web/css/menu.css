@@ -22,7 +22,7 @@
 		height: 100%;
 		width: 300px;
 		position: absolute;
-		left: -230px;
+		left: -300px;
 		transition: all .2s linear;
 	}
 
@@ -33,7 +33,7 @@
 	nav {
 		width: 100%;
 		position: absolute;
-		top: 10vh;
+		top: 74px;
 	}
 
 	nav a {
@@ -66,11 +66,11 @@
 	}
 
 	#check:checked~.barra {
-		transform: translateX(230px);
+		transform: translateX(300px);
 	}
 }
 
-@media only screen and (max-width : 421px) {
+@media only screen and (max-width : 420px) {
 	#menu {
 		display: none;
 	}
