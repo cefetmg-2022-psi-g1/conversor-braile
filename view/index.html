@@ -5,17 +5,18 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="images/favicon.png" type="image/x-icon" />
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/translate.css">
-		<link rel="stylesheet" href="css/footer.css">
-		<link rel="stylesheet" href="css/menu.css">
-		<link rel="stylesheet" href="css/header.css">
+		<link rel="stylesheet" href="../content/css/fonts.css">
+		<link rel="stylesheet" href="../content/css/style.css">
+		<link rel="stylesheet" href="../content/css/translate.css">
+		<link rel="stylesheet" href="../content/css/footer.css">
+		<link rel="stylesheet" href="../content/css/menu.css">
+		<link rel="stylesheet" href="../content/css/header.css">
 		<title>2Braile</title>
 	</head>
 	<body>
 		<div id="menu">
 			<input type="checkbox" id="check">
-			<label for="check" id="icone"><img src="images/menu.svg"/></label>
+			<label for="check" id="icone"><img src="../content/images/menu.svg"/></label>
 			<div class="barra">
 				<nav>
 					<a href="">
@@ -30,7 +31,7 @@
 		<div class="nav">
 			<input type="checkbox" id="nav-check">
 			<div class="nav-header">
-				<img src="images/Braille.svg" class="nav-title">
+				<img src="../content/images/Braille.svg" class="nav-title">
 			</div>
 			<div class="nav-btn">
 				<label for="nav-check">
@@ -50,18 +51,20 @@
 		</div>
 
 		<header>
-			<img id="logo" src="images/Braille.svg" alt="">
+			<img id="logo" src="../content/images/Braille.svg" alt="">
 		</header>
 
 		
 		<main class="translate">
-			<div id="in">
-				<textarea name="" id="" cols="50" rows="30"></textarea>
-			</div>
-			<img id="arrow" src="images/arrow-long-right.svg" alt="">
-			<div id="out">
-				<textarea disabled name="" id="" cols="50" rows="30"></textarea>
-			</div>
+			<form action="../controller/App.js" method="post">
+				<div id="in">
+					<textarea name="" id="" cols="50" rows="30" placeholder="Digite o texto a ser traduzido..."></textarea>
+				</div>
+				<img id="arrow" src="../content/images/arrow-long-right.svg" alt="">
+				<div id="out">
+					<textarea disabled name="" id="" cols="50" rows="30" placeholder="Sua tradução aparecerá aqui..."></textarea>
+				</div>
+			</form>
 		</main>
 
 		<footer>

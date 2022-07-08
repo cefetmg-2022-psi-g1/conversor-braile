@@ -6,10 +6,5 @@ footer {
     text-align: center;
     width: 100vw;
     z-index: -1;
-}
-
-@media only screen and (max-width : 420px) {
-    footer {
-        padding-left: 0;
-    }
+    font-family: 'Archivo', sans-serif;
 }
