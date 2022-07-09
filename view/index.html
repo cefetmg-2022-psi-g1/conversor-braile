@@ -58,13 +58,16 @@
 		<main class="translate">
 			<form action="../controller/App.js" method="post">
 				<div id="in">
-					<textarea name="" id="" cols="50" rows="30" placeholder="Digite o texto a ser traduzido..."></textarea>
+					<textarea name="" id="area-in" cols="50" rows="30" placeholder="Digite o texto a ser traduzido..."></textarea>
 				</div>
 				<div id="arrow-button">
 					<abbr title="Traduzir"><img id="arrow" src="../content/images/arrow-long-right.svg" alt=""></abbr>
 				</div>
 				<div id="out">
-					<textarea disabled name="" id="" cols="50" rows="30" placeholder="Sua tradução aparecerá aqui..."></textarea>
+					<textarea disabled name="" id="area-out" cols="50" rows="30" placeholder="Sua tradução aparecerá aqui..."></textarea>
+				</div>
+				<div id="copy">
+					<abbr title="Copiar para área de transferência"><a><img src="../content/images/clipboard.svg" alt=""></a></abbr>
 				</div>
 			</form>
 		</main>
@@ -72,5 +75,7 @@
 		<footer>
 			<p>footer provisório (iremos falar brevemente sobre o sistema)</p>
 		</footer>
+
+		<script src="../content/js/copyClipboard.js"></script>
 	</body>
 </html>
