@@ -1,0 +1,15 @@
+{
+  "name": "2braile",
+  "version": "1.0.0",
+  "description": "Documentação do projeto/wiki https://github.com/cefetmg-2022-psi-g1/wiki/wiki",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  }
+}
