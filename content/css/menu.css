@@ -42,7 +42,6 @@
 
 	.link {
 		color: #050542;
-		font-family: 'Arial';
 		font-size: 12pt;
 		padding: 20px;
 		transition: all .2s linear;
@@ -51,7 +50,7 @@
 	}
 
 	.link:hover {
-		background-color: #5B7482;
+		background-color: #5b74828a;
 		color: white;
 	}
 
@@ -81,7 +80,6 @@
 
 	body {
 		margin: 0px;
-		font-family: 'segoe ui';
 	}
 
 	.nav {

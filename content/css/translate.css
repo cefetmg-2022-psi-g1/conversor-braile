@@ -1,9 +1,9 @@
-@media only screen and (min-width : 420px) {
+@media only screen and (min-width : 500px) {
     .translate form {
-        margin-left: calc(50vw - 35.5vw);
+        margin-left: calc(50vw - 38.5vw);
         display: grid;
-        padding-top: 4vh;
-        grid-template-columns: 34vw 5vw 34vw;
+        padding-top: 3vh;
+        grid-template-columns: 36vw 7vw 33vw 5vw;
     }
 
     textarea {
@@ -13,17 +13,21 @@
     }
 
     #arrow {
-        width: 3vw;
-        height: 70vh;
+        width: 4vw;
+        padding-top: 34vh;
+    }
+
+    #copy {
+        width: 24px;
     }
 }
 
-@media only screen and (max-width : 420px) {
+@media only screen and (max-width : 500px) {
     .translate form {
         display: grid;
-        margin-left: 16vw;
-        padding-top: 5vh;
-        grid-template-rows: 35vh 8vh 30vh;
+        margin-left: 17vw;
+        padding-top: 2vh;
+        grid-template-rows: 33vh 6vh 31vh 3vh;
         width: 66vw;    
     }
 
@@ -40,14 +44,25 @@
         margin-right: auto
     }
 
+    #copy {
+        width: 26px;
+        margin-left: 55vw;
+    }
+
 }
 
 textarea {
-    /*border: 0.5vw solid #C1D0D8;
-    box-shadow: inset 0 0 0.4vh black;
-    border-radius: 6px;*/
     border-radius: 2px;
     resize: none;
-    box-shadow: 5px 2.5px 2.5px rgba(0, 0, 0, 0.100);
-    font-family: 'Archivo', sans-serif;
+    box-shadow: 5px 2.5px 5px rgba(0, 0, 0, 0.040);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2vh;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#copy {
+    border: solid 1px;
+    height: 26px;
+    border-radius: 4px;
+    margin-top: 0.5vw;
 }

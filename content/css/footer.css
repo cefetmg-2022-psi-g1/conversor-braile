@@ -5,6 +5,5 @@ footer {
     width: 90%;
     text-align: center;
     width: 100vw;
-    z-index: -1;
-    font-family: 'Archivo', sans-serif;
+    font-size: 2vh;
 }
