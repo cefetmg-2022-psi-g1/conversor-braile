@@ -1,12 +1,11 @@
 const {Client} = require('pg')
-var texto = 'LA'
 
 const client = new Client({
     host: 'localhost',
     user: 'postgres',
     port: 5432,
-    password: 'postgres',
-    database: 'conversor-braile'
+    password: 'admin',
+    database: '2braile'
 })
 
 function traducao() {}

@@ -5,18 +5,18 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="../content/images/favicon.png" type="image/x-icon" />
-		<link rel="stylesheet" href="../content/css/fonts.css">
-		<link rel="stylesheet" href="../content/css/style.css">
-		<link rel="stylesheet" href="../content/css/translate.css">
-		<link rel="stylesheet" href="../content/css/footer.css">
-		<link rel="stylesheet" href="../content/css/menu.css">
-		<link rel="stylesheet" href="../content/css/header.css">
+		<link rel="stylesheet" href="css/fonts.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/translate.css">
+		<link rel="stylesheet" href="css/footer.css">
+		<link rel="stylesheet" href="css/menu.css">
+		<link rel="stylesheet" href="css/header.css">
 		<title>2Braile</title>
 	</head>
 	<body>
 		<div id="menu">
 			<input type="checkbox" id="check">
-			<label for="check" id="icone"><img src="../content/images/menu.svg"/></label>
+			<label for="check" id="icone"><img src="images/menu.svg"/></label>
 			<div class="barra">
 				<nav>
 					<a href="">
@@ -31,7 +31,7 @@
 		<div class="nav">
 			<input type="checkbox" id="nav-check">
 			<div class="nav-header">
-				<img src="../content/images/Braille.svg" class="nav-title">
+				<img src="images/Braille.svg" class="nav-title">
 			</div>
 			<div class="nav-btn">
 				<label for="nav-check">
@@ -51,23 +51,26 @@
 		</div>
 
 		<header>
-			<img id="logo" src="../content/images/Braille.svg" alt="">
+			<img id="logo" src="images/Braille.svg" alt="">
 		</header>
 
 		
 		<main class="translate">
-			<form action="../controller/App.js" method="post">
+			<form action="/" method="post">
 				<div id="in">
 					<textarea name="" id="area-in" cols="50" rows="30" placeholder="Digite o texto a ser traduzido..."></textarea>
 				</div>
 				<div id="arrow-button">
-					<abbr title="Traduzir"><img id="arrow" src="../content/images/arrow-long-right.svg" alt=""></abbr>
+					<button><abbr title="Traduzir"><img id="arrow" src="images/arrow-long-right.svg" alt=""></abbr></button>
 				</div>
 				<div id="out">
 					<textarea disabled name="" id="area-out" cols="50" rows="30" placeholder="Sua tradução aparecerá aqui..."></textarea>
+					<% if(textoTraduzido > 0) for(var i = 0; i < textoTraduzido.length; i++) {
+						document.getElementById("area-out").value = document.getElementById("area-out").value + textoTraduzido[i]
+					} %>
 				</div>
 				<div id="copy">
-					<abbr title="Copiar para área de transferência"><a><img src="../content/images/clipboard.svg" alt=""></a></abbr>
+					<abbr title="Copiar para área de transferência"><a><img src="images/clipboard.svg" alt=""></a></abbr>
 				</div>
 			</form>
 		</main>
@@ -76,6 +79,6 @@
 			<p>2Braile - Conversor didático para Braile - 2022</p>
 		</footer>
 
-		<script src="../content/js/copyClipboard.js"></script>
+		<script src="js/copyClipboard.js"></script>
 	</body>
 </html>

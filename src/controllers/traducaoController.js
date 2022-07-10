@@ -1,20 +1,21 @@
 module.exports.index = function(application, req, res) {
-    res.render('index')
+    let resultado = []
+    res.render('index', {textoTraduzido: resultado})
 }
 
 module.exports.traducao = function(application, entradaTraducao, req, res) {
-    var validacaoModel = application.src.models.dao.validacaoDAO();
+    var validacaoModel = application.src.models.dao.validacaoDAO.validarEntrada();
     var traducaoModel = application.src.models.dao.dataBaseDAO();
     var textoTraducao
 
-    validacaoModel.validarEntrada(entradaTraducao, (err, result) => {
+    validacaoModel(entradaTraducao, function(err, result) {
         if(err)
             //tratar erro
 
         textoTraducao = result
     })
 
-    traducaoModel.gerarTraducao(textoTraducao, (err, result) => {
+    traducaoModel.gerarTraducao(textoTraducao, function(err, result) {
         if(err)
             //tratar erro
 
