@@ -27,7 +27,7 @@
         display: grid;
         margin-left: 17vw;
         padding-top: 2vh;
-        grid-template-rows: 35vh 8vh 31vh 3vh;
+        grid-template-rows: 31vh 5vh auto auto;
         width: 66vw;    
     }
 
