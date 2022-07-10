@@ -1,9 +1,9 @@
 @media only screen and (min-width : 500px) {
     .translate form {
-        margin-left: calc(50vw - 38.5vw);
+        margin-left: calc(50vw - 36.5vw);
         display: grid;
         padding-top: 3vh;
-        grid-template-columns: 36vw 7vw 33vw 5vw;
+        grid-template-columns: 34vw 7vw 33vw 5vw;
     }
 
     textarea {
@@ -14,11 +14,14 @@
 
     #arrow {
         width: 4vw;
-        padding-top: 34vh;
     }
 
     #copy {
         width: 24px;
+    }
+
+    #arrow-button button{
+        margin-top: 34vh;
     }
 }
 
@@ -27,7 +30,7 @@
         display: grid;
         margin-left: 17vw;
         padding-top: 2vh;
-        grid-template-rows: 33vh 6vh 31vh 3vh;
+        grid-template-rows: 32vh 6vh 31vh 3vh;
         width: 66vw;    
     }
 
@@ -39,9 +42,6 @@
 
     #arrow {
         transform: rotate(90deg);
-        display: block;
-        margin-left: auto;
-        margin-right: auto
     }
 
     #copy {
@@ -49,6 +49,9 @@
         margin-left: 55vw;
     }
 
+    #arrow-button button{
+        margin-left: 28vw;
+    }
 }
 
 textarea {
@@ -65,4 +68,12 @@ textarea {
     height: 26px;
     border-radius: 4px;
     margin-top: 0.5vw;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.10), -5px -5px 10px rgba(0, 0, 0, 0.10);
+}
+
+#arrow-button button{
+    background-color: #C1D0D8;
+    border-radius: 7px;
+    border: 1px solid;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05), -5px -5px 20px rgba(0, 0, 0, 0.05);
 }
