@@ -14,6 +14,5 @@
 module.exports.validarEntrada = function(entradaTraducao, callback) {
     //blablabla
     var textoTraducao = entradaTraducao
-    let err = 0
-    callback(err, textoTraducao)
+    callback(null, textoTraducao)
 }

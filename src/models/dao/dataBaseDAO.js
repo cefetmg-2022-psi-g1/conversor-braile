@@ -4,31 +4,24 @@ const client = new Client({
     host: 'localhost',
     user: 'postgres',
     port: 5432,
-    password: 'admin',
+    password: 'postgres',
     database: '2braile'
 })
 
-function traducao() {}
 
-client.connect()
-
-traducao.prototype.gerarTraducao = function(textoTraducao, callback) {
+module.exports.gerarTraducao = function(textoTraducao, callback) {
+    client.connect()
     var textoTraduzido = []
-    client.connect();
-    for(caractere of textoTraducao) {
-        client.query('SELECT br.cod_braile FROM braile br WHERE br.char_alfabeto = \'' + caractere + '\'', (err, res) => {
-            if(err)
-                callback(err)
-            else
-                textoTraduzido.push(res)
+
+    for(let i = 0; i < textoTraducao.length; i++) {
+        client.query('SELECT br.cod_braile FROM braile br WHERE br.char_alfabeto = \'' + textoTraducao[i] + '\'', (err, res) => {
+            textoTraduzido.push(res.rows)
+            if(i == textoTraducao.length - 1) {
+                callback(null, textoTraduzido)
+                client.end()
+            }
         })
     }
-
-    callback(err, textoTraduzido)
-
-    client.end
 }
 
-module.exports = function() {
-    return traducao;
-}
+

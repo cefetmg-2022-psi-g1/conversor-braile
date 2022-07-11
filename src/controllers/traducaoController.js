@@ -4,21 +4,20 @@ module.exports.index = function(application, req, res) {
 }
 
 module.exports.traducao = function(application, entradaTraducao, req, res) {
-    var validacaoModel = application.src.models.dao.validacaoDAO.validarEntrada();
-    var traducaoModel = application.src.models.dao.dataBaseDAO();
-    var textoTraducao
+    let textoTraducao = ''
 
-    validacaoModel(entradaTraducao, function(err, result) {
-        if(err)
+    application.src.models.dao.validacaoDAO.validarEntrada(entradaTraducao, function(err, result) {
+        //if(err)
             //tratar erro
 
         textoTraducao = result
     })
 
-    traducaoModel.gerarTraducao(textoTraducao, function(err, result) {
-        if(err)
-            //tratar erro
-
+    application.src.models.dao.dataBaseDAO.gerarTraducao(textoTraducao, function(err, result) {
+        console.log(result)
+        //if(err)
+           //console.log(err)
+        
         res.render('index', {textoTraduzido: result})
     })
 }

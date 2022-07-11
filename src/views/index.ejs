@@ -58,15 +58,16 @@
 		<main class="translate">
 			<form action="/" method="post">
 				<div id="in">
-					<textarea name="" id="area-in" cols="50" rows="30" placeholder="Digite o texto a ser traduzido..."></textarea>
+					<textarea name="entradaTraducao" id="area-in" cols="50" rows="30" placeholder="Digite o texto a ser traduzido..."></textarea>
 				</div>
 				<div id="arrow-button">
 					<button><abbr title="Traduzir"><img id="arrow" src="images/arrow-long-right.svg" alt=""></abbr></button>
 				</div>
 				<div id="out">
-					<textarea disabled name="" id="area-out" cols="50" rows="30" placeholder="Sua tradução aparecerá aqui..."></textarea>
-					<% if(textoTraduzido > 0) for(var i = 0; i < textoTraduzido.length; i++) {
-						document.getElementById("area-out").value = document.getElementById("area-out").value + textoTraduzido[i]
+					<textarea disabled name="" id="area-out" cols="50" rows="30" placeholder="Sua tradução aparecerá aqui..." value="asdklaçsçfd"></textarea>
+					<% if(textoTraduzido.length > 0) for(var i = 0; i < textoTraduzido.length; i++) {
+						console.log(textoTraduzido)
+						document.getElementById("area-out").value = document.getElementById("area-out").value + 'textoTraduzido[i]'
 					} %>
 				</div>
 				<div id="copy">
