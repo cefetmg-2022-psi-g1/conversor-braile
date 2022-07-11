@@ -65,10 +65,9 @@
 				</div>
 				<div id="out">
 					<textarea disabled name="" id="area-out" cols="50" rows="30" placeholder="Sua tradução aparecerá aqui..." value="asdklaçsçfd"></textarea>
-					<% if(textoTraduzido.length > 0) for(var i = 0; i < textoTraduzido.length; i++) {
-						console.log(textoTraduzido)
-						document.getElementById("area-out").value = document.getElementById("area-out").value + 'textoTraduzido[i]'
-					} %>
+					<p id="sumir"><% if(textoTraduzido.length > 0) for(var i = 0; i < textoTraduzido.length; i++) { %>
+					<%= JSON.stringify(textoTraduzido[i][0].cod_braile) %>
+					<% } %></p>
 				</div>
 				<div id="copy">
 					<abbr title="Copiar para área de transferência"><a><img src="images/clipboard.svg" alt=""></a></abbr>

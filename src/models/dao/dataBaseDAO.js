@@ -4,7 +4,7 @@ const client = new Client({
     host: 'localhost',
     user: 'postgres',
     port: 5432,
-    password: 'postgres',
+    password: 'admin',
     database: '2braile'
 })
 
@@ -23,5 +23,3 @@ module.exports.gerarTraducao = function(textoTraducao, callback) {
         })
     }
 }
-
-
