@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" href="../content/images/favicon.png" type="image/x-icon" />
+		<link rel="icon" href="images/favicon.png" type="image/x-icon" />
 		<link rel="stylesheet" href="css/fonts.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/translate.css">
@@ -64,10 +64,10 @@
 					<button><abbr title="Traduzir"><img id="arrow" src="images/arrow-long-right.svg" alt=""></abbr></button>
 				</div>
 				<div id="out">
-					<textarea disabled name="" id="area-out" cols="50" rows="30" placeholder="Sua tradução aparecerá aqui..." value="asdklaçsçfd"></textarea>
-					<p id="sumir"><% if(textoTraduzido.length > 0) for(var i = 0; i < textoTraduzido.length; i++) { %>
-					<%= JSON.stringify(textoTraduzido[i][0].cod_braile) %>
-					<% } %></p>
+					<textarea disabled name="" id="area-out" cols="50" rows="30" placeholder="Sua tradução aparecerá aqui...">
+						<% if(textoTraduzido.length > 0) for(var i = 0; i < textoTraduzido.length; i++) { %>
+							<%= JSON.stringify(textoTraduzido[i][0].cod_braile) %>
+						<% } %></textarea>
 				</div>
 				<div id="copy">
 					<abbr title="Copiar para área de transferência"><a><img src="images/clipboard.svg" alt=""></a></abbr>
@@ -80,5 +80,6 @@
 		</footer>
 
 		<script src="js/copyClipboard.js"></script>
+		<script src="js/showFormatted.js"></script>
 	</body>
 </html>

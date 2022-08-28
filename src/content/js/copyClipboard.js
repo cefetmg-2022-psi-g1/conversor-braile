@@ -11,16 +11,5 @@ button.addEventListener('click', function() {
 
 textIn.addEventListener('keydown', function(){
     button.style.opacity = "1";
+
 });
-
-let sumir = document.getElementById("sumir");
-let texto = document.getElementById("sumir").innerHTML;
-
-sumir.style.display = 'none';
-
-texto = texto.replace(/\"/g, '').trim().replace(/(\r\n|\n|\r)/gm, "").replaceAll('										', '')
-
-TextArea.value = texto;
-
-
-
