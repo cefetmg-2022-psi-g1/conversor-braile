@@ -1,25 +1,40 @@
-const {Client} = require('pg')
 
-const client = new Client({
-    host: 'localhost',
-    user: 'postgres',
-    port: 5432,
-    password: 'admin',
-    database: '2braile'
-})
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://2braile:admin@2braile.v8tfqlo.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+
+client.connect(err => {
+  console.log("Connected correctly to server");
+});
 
 
-module.exports.gerarTraducao = function(textoTraducao, callback) {
-    client.connect()
+async function isConnected() {
+    return !!client && !!client.topology && client.topology.isConnected()
+}
+
+
+
+module.exports.gerarTraducao = async function(textoTraducao, callback) {
+
+    if(await isConnected() == false) {
+        client.connect(err => {
+            console.log("Connected correctly to server");
+        });
+    }
+
+    const collection = client.db("2braile").collection("caracteres");
     var textoTraduzido = []
 
     for(let i = 0; i < textoTraducao.length; i++) {
-        client.query('SELECT br.cod_braile FROM braile br WHERE br.char_alfabeto = \'' + textoTraducao[i] + '\'', (err, res) => {
-            textoTraduzido.push(res.rows)
-            if(i == textoTraducao.length - 1) {
-                callback(null, textoTraduzido)
-                client.end()
-            }
-        })
+        let query = {caracterRomano: textoTraducao[i]}
+        const objConsulta = await collection.findOne(query)
+        textoTraduzido.push(objConsulta.codBraile)
+        if(i == textoTraducao.length - 1) {
+            callback(null, textoTraduzido)
+        }
     }
+
 }
+
+
+
