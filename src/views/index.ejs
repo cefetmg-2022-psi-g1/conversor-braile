@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="css/footer.css">
 		<link rel="stylesheet" href="css/menu.css">
 		<link rel="stylesheet" href="css/header.css">
+		<link rel="stylesheet" href="css/keyboard.css">
 		<title>2Braile</title>
 	</head>
 	<body>
@@ -58,7 +59,7 @@
 		<main class="translate">
 			<form action="/" method="post">
 				<div id="in">
-					<textarea name="entradaTraducao" id="area-in" cols="50" rows="30" placeholder="Digite o texto a ser traduzido..."></textarea>
+					<textarea name="entradaTraducao" id="area-in" cols="50" rows="30" class="use-keyboard-input" placeholder="Digite o texto a ser traduzido..."></textarea>
 				</div>
 				<div id="arrow-button">
 					<button><abbr title="Traduzir"><img id="arrow" src="images/arrow-long-right.svg" alt=""></abbr></button>
@@ -81,5 +82,7 @@
 
 		<script src="js/copyClipboard.js"></script>
 		<script src="js/showFormatted.js"></script>
+		<script src="js/keyboard.js"></script>
+		<script src="js/disableKeyboardToSmartphones.js"></script>
 	</body>
 </html>
