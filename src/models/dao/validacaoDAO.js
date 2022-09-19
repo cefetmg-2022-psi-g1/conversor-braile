@@ -14,8 +14,9 @@
 module.exports.validarEntrada = function(entradaTraducao, callback) {
     //blablabla
     var textoTraducao = entradaTraducao.replace("</sub>", "")
-    textoTraducao.replace("<sub>", "🎁")
-    textoTraducao.replace("</sup>", "")
-    textoTraducao.replace("<sup>", "🀄")
+    textoTraducao = textoTraducao.replaceAll("<sub>", "♂")
+    textoTraducao = textoTraducao.replaceAll("</sub>", "")
+    textoTraducao = textoTraducao.replaceAll("</sup>", "")
+    textoTraducao = textoTraducao.replaceAll("<sup>", "♀")
     callback(null, textoTraducao)
 }
