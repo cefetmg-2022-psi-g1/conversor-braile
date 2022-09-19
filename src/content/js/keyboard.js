@@ -12,7 +12,9 @@ const Keyboard = {
 
     properties: {
         value: "",
-        capsLock: false
+        capsLock: false,
+        sub: false,
+        sup: false
     },
 
     init() {
@@ -34,8 +36,8 @@ const Keyboard = {
         // Automatically use keyboard for elements with .use-keyboard-input
         document.querySelectorAll(".use-keyboard-input").forEach(element => {
             element.addEventListener("focus", () => {
-                this.open(element.value, currentValue => {
-                    element.value = currentValue;
+                this.open(element.innetHTML, currentValue => {
+                    element.innerHTML = currentValue;
                 });
             });
         });
@@ -48,7 +50,15 @@ const Keyboard = {
             "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
             "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "enter",
             "done", "z", "x", "c", "v", "b", "n", "m", ",", ".", "?",
-            "space"
+            "sub", "sobre","space"
+        ];
+
+        const keyLayoutReserva = [
+            "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
+            "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
+            "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "enter",
+            "done", "z", "x", "c", "v", "b", "n", "m", ",", ".", "?",
+            "sub", "sobre","space"
         ];
 
         // Creates HTML for an icon
@@ -82,10 +92,32 @@ const Keyboard = {
 
                     keyElement.addEventListener("click", () => {
                         this._toggleCapsLock();
-                        keyElement.classList.toggle("keyboard__key--active", this.properties.capsLock);
+                        keyElement.classList.toggle("keyboard__key--active");
                     });
 
                     break;
+
+                case "sobre":
+                    keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable");
+                    keyElement.innerHTML = "x²";
+
+                    keyElement.addEventListener("click", () => {
+                        this._toggleSuperscript();
+                        keyElement.classList.toggle("keyboard__key--active");
+                    });
+
+                    break;
+
+                case "sub":
+                    keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable");
+                    keyElement.innerHTML = "x₂";
+
+                    keyElement.addEventListener("click", () => {
+                        this._toggleSubscript();
+                        keyElement.classList.toggle("keyboard__key--active", this.properties.sub);
+                    });
+
+                    break;    
 
                 case "enter":
                     keyElement.classList.add("keyboard__key--wide");
@@ -124,7 +156,24 @@ const Keyboard = {
                     keyElement.textContent = key.toLowerCase();
 
                     keyElement.addEventListener("click", () => {
-                        this.properties.value += this.properties.capsLock ? key.toUpperCase() : key.toLowerCase();
+                        if (this.properties.capsLock && this.properties.sup)
+                            this.properties.value += key.toUpperCase().sup()
+
+                        else if (this.properties.capsLock && this.properties.sub) 
+                            this.properties.value += key.toUpperCase().sub()
+
+                        else if (!this.properties.capsLock && this.properties.sub)
+                            this.properties.value += key.toLowerCase().sub()
+
+                        else if (!this.properties.capsLock && this.properties.sup)
+                            this.properties.value += key.toLowerCase().sup()
+
+                        else if (this.properties.capsLock && !this.properties.sup && !this.properties.sub)
+                            this.properties.value += key.toUpperCase()
+
+                        else
+                            this.properties.value += key.toLowerCase()
+
                         this._triggerEvent("oninput");
                     });
 
@@ -147,6 +196,41 @@ const Keyboard = {
         }
     },
 
+
+    _toggleSuperscript() {
+        if(this.properties.sub === true) {
+            this._toggleSubscript()
+        }
+        this.properties.sup = !this.properties.sup
+        for (const key of this.elements.keys) {
+            
+            if(this.properties.sup) {
+                //key.textContent = key.textContent.sup()
+            }
+            else {
+                key.textContent = keyLayoutReserva[keyLayout.indexOf(key)];
+            }
+            
+        }
+    },
+
+    _toggleSubscript() {
+        if(this.properties.sup === true) {
+            this._toggleSuperscript()
+        }
+        this.properties.sub = !this.properties.sub
+        for (const key of this.elements.keys) {
+            
+            if(this.properties.sub) {
+                //key.textContent = key.textContent.sub()
+            }
+            else {
+                key.textContent = keyLayoutReserva[keyLayout.indexOf(key)];
+            }
+            
+        }
+    },
+
     _toggleCapsLock() {
         this.properties.capsLock = !this.properties.capsLock;
 
@@ -154,8 +238,6 @@ const Keyboard = {
             if (key.childElementCount === 0) {
                 key.textContent = this.properties.capsLock ? key.textContent.toUpperCase() : key.textContent.toLowerCase();
                 if(this.properties.capsLock){
-                    if(key.textContent === '1') key.textContent = 'Sub'
-                    if(key.textContent === '2') key.textContent = 'Sobre'
                     if(key.textContent === '3') key.textContent = 'Seta'
                     if(key.textContent === '4') key.textContent = 'Seta2'
                     if(key.textContent === '5') key.textContent = 'icon1'
@@ -165,8 +247,6 @@ const Keyboard = {
                     if(key.textContent === '9') key.textContent = 'icon5'
                     if(key.textContent === '0') key.textContent = 'icon6'
                 } else {
-                    if(key.textContent === 'sub') key.textContent = '1'
-                    if(key.textContent === 'sobre') key.textContent = '2'
                     if(key.textContent === 'seta') key.textContent = '3'
                     if(key.textContent === 'seta2') key.textContent = '4'
                     if(key.textContent === 'icon1') key.textContent = '5'
