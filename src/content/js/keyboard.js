@@ -34,8 +34,8 @@ const Keyboard = {
         // Automatically use keyboard for elements with .use-keyboard-input
         document.querySelectorAll(".use-keyboard-input").forEach(element => {
             element.addEventListener("focus", () => {
-                this.open(element.value, currentValue => {
-                    element.value = currentValue;
+                this.open(element.innerHTML, currentValue => {
+                    element.innerHTML = currentValue;
                 });
             });
         });

@@ -59,8 +59,9 @@
 		<main class="translate">
 			<form action="/" method="post">
 				<div id="in">
-					<textarea name="entradaTraducao" id="area-in" cols="50" rows="30" class="use-keyboard-input" placeholder="Digite o texto a ser traduzido..."></textarea>
+					<div id="area-in" class="use-keyboard-input" contentEditable="true">Digite o texto a ser traduzido...</div>
 				</div>
+				<input type="text" name="entradaTraducao" id="inputHidden">
 				<div id="arrow-button">
 					<button><abbr title="Traduzir"><img id="arrow" src="images/arrow-long-right.svg" alt=""></abbr></button>
 				</div>
@@ -84,5 +85,6 @@
 		<script src="js/showFormatted.js"></script>
 		<script src="js/keyboard.js"></script>
 		<script src="js/disableKeyboardToSmartphones.js"></script>
+		<script src="js/postInputToDiv.js"></script>
 	</body>
 </html>

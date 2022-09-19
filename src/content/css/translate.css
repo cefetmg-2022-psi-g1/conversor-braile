@@ -6,7 +6,7 @@
         grid-template-columns: 34vw 7vw 33vw 5vw;
     }
 
-    textarea {
+    textarea, #area-in {
         width: 30vw;
         height: 70vh;
         font-size: 4vh;
@@ -34,7 +34,7 @@
         width: 66vw;    
     }
 
-    textarea {
+    textarea, #area-in {
         width: 66vw;
         height: 30vh;
         font-size: 2.2vh;
@@ -54,13 +54,17 @@
     }
 }
 
-textarea {
+textarea, #area-in {
     border-radius: 2px;
     resize: none;
     box-shadow: 5px 2.5px 5px rgba(0, 0, 0, 0.040);
     background-color: rgba(255, 255, 255, 0.5);
     padding: 2vh;
     font-family: 'Noto Sans', sans-serif;
+}
+
+#area-in {
+    border: 1px solid rgba(128, 128, 128, 0.719);
 }
 
 #copy {
