@@ -28,7 +28,13 @@ module.exports.gerarTraducao = async function(textoTraducao, callback) {
     for(let i = 0; i < textoTraducao.length; i++) {
         let query = {caracterRomano: textoTraducao[i]}
         const objConsulta = await collection.findOne(query)
-        textoTraduzido.push(objConsulta.codBraile)
+        
+        if (objConsulta == null) 
+            textoTraduzido.push("□")
+        
+        else
+            textoTraduzido.push(objConsulta.codBraile)
+
         if(i == textoTraducao.length - 1) {
             callback(null, textoTraduzido)
         }
