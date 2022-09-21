@@ -53,14 +53,6 @@ const Keyboard = {
             "sub", "sobre","space"
         ];
 
-        const keyLayoutReserva = [
-            "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
-            "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
-            "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "enter",
-            "done", "z", "x", "c", "v", "b", "n", "m", ",", ".", "?",
-            "sub", "sobre","space"
-        ];
-
         // Creates HTML for an icon
         const createIconHTML = (icon_name) => {
             return `<i class="material-icons">${icon_name}</i>`;
@@ -114,7 +106,7 @@ const Keyboard = {
 
                     keyElement.addEventListener("click", () => {
                         this._toggleSubscript();
-                        keyElement.classList.toggle("keyboard__key--active", this.properties.sub);
+                        keyElement.classList.toggle("keyboard__key--active");
                     });
 
                     break;    
@@ -202,16 +194,6 @@ const Keyboard = {
             this._toggleSubscript()
         }
         this.properties.sup = !this.properties.sup
-        for (const key of this.elements.keys) {
-            
-            if(this.properties.sup) {
-                //key.textContent = key.textContent.sup()
-            }
-            else {
-                key.textContent = keyLayoutReserva[keyLayout.indexOf(key)];
-            }
-            
-        }
     },
 
     _toggleSubscript() {
@@ -219,16 +201,6 @@ const Keyboard = {
             this._toggleSuperscript()
         }
         this.properties.sub = !this.properties.sub
-        for (const key of this.elements.keys) {
-            
-            if(this.properties.sub) {
-                //key.textContent = key.textContent.sub()
-            }
-            else {
-                key.textContent = keyLayoutReserva[keyLayout.indexOf(key)];
-            }
-            
-        }
     },
 
     _toggleCapsLock() {
@@ -237,25 +209,6 @@ const Keyboard = {
         for (const key of this.elements.keys) {
             if (key.childElementCount === 0) {
                 key.textContent = this.properties.capsLock ? key.textContent.toUpperCase() : key.textContent.toLowerCase();
-                if(this.properties.capsLock){
-                    if(key.textContent === '3') key.textContent = 'Seta'
-                    if(key.textContent === '4') key.textContent = 'Seta2'
-                    if(key.textContent === '5') key.textContent = 'icon1'
-                    if(key.textContent === '6') key.textContent = 'icon2'
-                    if(key.textContent === '7') key.textContent = 'icon3'
-                    if(key.textContent === '8') key.textContent = 'icon4'
-                    if(key.textContent === '9') key.textContent = 'icon5'
-                    if(key.textContent === '0') key.textContent = 'icon6'
-                } else {
-                    if(key.textContent === 'seta') key.textContent = '3'
-                    if(key.textContent === 'seta2') key.textContent = '4'
-                    if(key.textContent === 'icon1') key.textContent = '5'
-                    if(key.textContent === 'icon2') key.textContent = '6'
-                    if(key.textContent === 'icon3') key.textContent = '7'
-                    if(key.textContent === 'icon4') key.textContent = '8'
-                    if(key.textContent === 'icon5') key.textContent = '9'
-                    if(key.textContent === 'icon6') key.textContent = '0'
-                }
             }
         }
     },
