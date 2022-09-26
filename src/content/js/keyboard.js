@@ -47,10 +47,10 @@ const Keyboard = {
         const fragment = document.createDocumentFragment();
         const keyLayout = [
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
-            "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
-            "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "enter",
+            "sub", "sobre","q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
+             "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "enter",
             "done", "z", "x", "c", "v", "b", "n", "m", ",", ".", "?",
-            "sub", "sobre","space"
+            "space"
         ];
 
         // Creates HTML for an icon
@@ -90,7 +90,7 @@ const Keyboard = {
                     break;
 
                 case "sobre":
-                    keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable");
+                    keyElement.classList.add("keyboard__key--activatable");
                     keyElement.innerHTML = "x²";
 
                     keyElement.addEventListener("click", () => {
@@ -101,7 +101,7 @@ const Keyboard = {
                     break;
 
                 case "sub":
-                    keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable");
+                    keyElement.classList.add("keyboard__key--activatable");
                     keyElement.innerHTML = "x₂";
 
                     keyElement.addEventListener("click", () => {
@@ -193,6 +193,7 @@ const Keyboard = {
         if(this.properties.sub === true) {
             this._toggleSubscript()
         }
+
         this.properties.sup = !this.properties.sup
     },
 
@@ -200,6 +201,7 @@ const Keyboard = {
         if(this.properties.sup === true) {
             this._toggleSuperscript()
         }
+
         this.properties.sub = !this.properties.sub
     },
 
