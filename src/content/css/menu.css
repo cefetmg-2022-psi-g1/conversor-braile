@@ -10,6 +10,7 @@
 		z-index: 1;
 		background-color: #5B7482;
 		transition: all .2s linear;
+		z-index: 8;
 	}
 
 	#check {
@@ -24,6 +25,7 @@
 		position: absolute;
 		left: -300px;
 		transition: all .2s linear;
+		z-index: 7;
 	}
 
 	.barra .link {
@@ -108,6 +110,7 @@
 		display: inline;
 		float: right;
 		font-size: 18px;
+		z-index: 11;
 	}
 
 	.nav>.nav-links>a {
