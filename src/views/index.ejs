@@ -26,14 +26,18 @@
 					<a href="">
 						<div class="link">Sobre nós</div>
 					</a>
+					<a href="periodicTable.html">
+						<div class="link">Tabela Periódica Interativa</div>
+					</a>
 				</nav>
 			</div>
 		</div>
 		<div class="nav">
 			<input type="checkbox" id="nav-check">
 			<div class="nav-header">
-				<img src="images/Braille.svg" class="nav-title">
+				<a href=""><img src="images/Braille.svg" class="nav-title"></a>
 			</div>
+			
 			<div class="nav-btn">
 				<label for="nav-check">
 					<span></span>
@@ -41,22 +45,24 @@
 					<span></span>
 				</label>
 			</div>
-			<div class="nav-links">
+			<div href class="nav-links">
 				<a href="">
                     <div class="link">Login</div>
                 </a>
                 <a href="">
                     <div class="link">Sobre nós</div>
                 </a>
+				<a href="periodicTable.html">
+					<div class="link">Tabela Periódica Interativa</div>
+				</a>
 			</div>
 		</div>
 
 		<header>
-			<img id="logo" src="images/Braille.svg" alt="">
+			<a href="index.ejs"><img id="logo" src="images/Braille.svg" alt=""></a>
 		</header>
 
-		
-		<main class="translate">
+		<main class="translate" id="main-content">
 			<form action="/" method="post">
 				<div id="in">
 					<div id="area-in" class="use-keyboard-input" contentEditable="true">Digite o texto a ser traduzido...</div>
