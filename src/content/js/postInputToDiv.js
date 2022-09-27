@@ -1,10 +1,11 @@
 let btnTranslate = document.getElementById("arrow-button")
 let inputHidden = document.getElementById("inputHidden")
 
-btnTranslate.addEventListener('mouseover', function() {
+btnTranslate.addEventListener('click', function() {
     inputHidden.value = textIn.innerHTML
 });
 
+// faz um placeholder no input
 textIn.style.color = "gray"
 
 textIn.addEventListener('focus', function() {
