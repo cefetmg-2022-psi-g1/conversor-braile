@@ -3,7 +3,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 require('dotenv').config();
 const senhabd = process.env.MONGODBSENHA
 const uri = "mongodb+srv://2braile:" + senhabd + "@2braile.v8tfqlo.mongodb.net/?retryWrites=true&w=majority"
-console.log(uri)
+//console.log(uri)
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
