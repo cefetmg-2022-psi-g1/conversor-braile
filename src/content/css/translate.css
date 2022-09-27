@@ -76,8 +76,8 @@ textarea, #area-in {
 }
 
 #arrow-button button{
-    background-color: #C1D0D8;
-    border-radius: 7px;
-    border: 1px solid;
+    background-color: #445863;
+    border: 0;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05), -5px -5px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
 }
