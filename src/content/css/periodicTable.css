@@ -32,11 +32,11 @@ body{
   position: relative;
   overflow: hidden;
   padding: 2%;
-  background: #F8FFFD;
   text-shadow: 0 0 0.1vw currentColor;
   width: 92vw;
-  padding: 5vh;
   padding-bottom: 8vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 .wrapper > input {
   -webkit-appearance: none;
@@ -105,11 +105,12 @@ body{
   text-align: center;
   transition: 200ms;
 }
-.element .symbol {
+.element .symbol, .braile {
   font-size: 1.7vw;
 }
+
 .element .name {
-  font-size: 0.7vw;
+  font-size: 0.65vw;
 }
 .element .atomic-mass {
   position: absolute;
@@ -129,6 +130,7 @@ body{
   opacity: 0;
   transition: 200ms;
   text-align: right;
+  font-size: 0.4vw;
 }
 .element .model {
   display: none;
@@ -149,6 +151,7 @@ body{
   border-radius: 50%;
   opacity: 0.25;
 }
+
 .element .model .orbital:nth-child(1) {
   margin: 10%;
   animation-duration: 40s;
@@ -1791,6 +1794,28 @@ body{
   cursor: pointer;
   outline: none;
 }
+
+.element input[type="radio"] ~ .square .atomic-mass {
+  display: none;
+}
+
+.element input[type="radio"].activate:checked ~ .square .atomic-mass {
+  display: inline;
+}
+
+.element input[type="radio"] ~ .square .braile {
+  display: none;
+}
+
+.element input[type="radio"].activate:checked ~ .square .braile {
+  display: inline;
+}
+
+.element input[type="radio"].activate:checked ~ .square .symbol {
+  display: none;
+}
+
+
 .element input[type="radio"].activate:hover ~ .square {
   z-index: 2;
   transform: scale(1.35);
@@ -1832,6 +1857,7 @@ body{
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+
 .element input[type="radio"].deactivate {
   position: fixed;
   display: block;
