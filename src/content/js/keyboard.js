@@ -153,23 +153,14 @@ const Keyboard = {
                     keyElement.textContent = key.toLowerCase();
 
                     keyElement.addEventListener("click", () => {
-                        if (this.properties.capsLock && this.properties.sup)
-                            this.properties.value += key.toUpperCase().sup()
+                        if (this.properties.sup)
+                            this.properties.value += keyElement.textContent.sup()
 
-                        else if (this.properties.capsLock && this.properties.sub) 
-                            this.properties.value += key.toUpperCase().sub()
+                        else if (this.properties.sub) 
+                            this.properties.value += keyElement.textContent.sub()
 
-                        else if (!this.properties.capsLock && this.properties.sub)
-                            this.properties.value += key.toLowerCase().sub()
-
-                        else if (!this.properties.capsLock && this.properties.sup)
-                            this.properties.value += key.toLowerCase().sup()
-
-                        else if (this.properties.capsLock && !this.properties.sup && !this.properties.sub)
-                            this.properties.value += key.toUpperCase()
-
-                        else
-                            this.properties.value += key.toLowerCase()
+                        else 
+                            this.properties.value += keyElement.textContent
 
                         this._triggerEvent("oninput");
                     });
@@ -216,6 +207,29 @@ const Keyboard = {
         for (const key of this.elements.keys) {
             if (key.childElementCount === 0) {
                 key.textContent = this.properties.capsLock ? key.textContent.toUpperCase() : key.textContent.toLowerCase();
+                if(this.properties.capsLock){
+                    if(key.textContent === '1') key.textContent = 'Δ'
+                    if(key.textContent === '2') key.textContent = '𝛿'
+                    if(key.textContent === '3') key.textContent = 'α'
+                    if(key.textContent === '4') key.textContent = 'β'
+                    if(key.textContent === '5') key.textContent = 'σ'
+                    if(key.textContent === '6') key.textContent = 'π'
+                    if(key.textContent === '7') key.textContent = '⇌'
+                    if(key.textContent === '8') key.textContent = '→'
+                    if(key.textContent === '9') key.textContent = '←'
+                    if(key.textContent === '0') key.textContent = 'μ'
+                } else {
+                    if(key.textContent === 'δ') key.textContent = '1';
+                    if(key.textContent === '𝛿') key.textContent = '2'
+                    if(key.textContent === 'α') key.textContent = '3'
+                    if(key.textContent === 'β') key.textContent = '4'
+                    if(key.textContent === 'σ') key.textContent = '5'
+                    if(key.textContent === 'π') key.textContent = '6'
+                    if(key.textContent === '⇌') key.textContent = '7'
+                    if(key.textContent === '→') key.textContent = '8'
+                    if(key.textContent === '←') key.textContent = '9'
+                    if(key.textContent === 'μ') key.textContent = '0'
+                }
             }
         }
     },
