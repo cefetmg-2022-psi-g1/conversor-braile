@@ -101,7 +101,6 @@ const Keyboard = {
 
                     keyElement.addEventListener("click", () => {
                         this._toggleSuperscript();
-                        //keyElement.classList.toggle("keyboard__key--active");
                     });
 
                     break;
@@ -113,7 +112,6 @@ const Keyboard = {
 
                     keyElement.addEventListener("click", () => {
                         this._toggleSubscript();
-                        //keyElement.classList.toggle("keyboard__key--active");
                     });
 
                     break;    
